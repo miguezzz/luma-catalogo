@@ -17,6 +17,7 @@ export default async function Home() {
             {category.name}
           </li>
         ))}
+        <li>Teste</li>
       </ul>
     </div>
   );
