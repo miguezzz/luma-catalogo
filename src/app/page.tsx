@@ -1,6 +1,6 @@
 import { AuroraText } from "@/components/magicui/aurora-text";
 
-import Card from "@/Card";
+import Card from "@/components/Card";
 
 const getCategories = async () => {
   const data = await fetch('http://localhost:1337/api/categories');
@@ -14,8 +14,8 @@ export default async function Home() {
   const categoriesList = await getCategories();
   return (
     <>
-      <div className="flex flex-col pt-12 items-center justify-center min-h-10">
-        <h1 className="text-4xl font-bold"><AuroraText>Categorias</AuroraText></h1>
+      <div className="flex flex-col items-center justify-center min-h-10">
+        <h1><AuroraText>Categorias</AuroraText></h1>
       </div>
       {/* grid com categorias */}
       <div className="flex items-center justify-center px-8 py-10">
