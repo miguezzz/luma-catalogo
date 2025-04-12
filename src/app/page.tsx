@@ -15,12 +15,15 @@ const getCategories = async () => {
 
   const categories = await data.json();
 
-  console.log(categories.data);
   return categories.data;
 }
 
 export default async function Home() {
-  const categoriesList = await getCategories();
+  const fullCategoriesList = await getCategories();
+
+  const categoriesList = fullCategoriesList.filter((categoryItem: { category: {} }) => {
+    return categoryItem.category === null;
+  });
 
   return (
     <div className="flex flex-col">
@@ -34,11 +37,11 @@ export default async function Home() {
 
       {/* category cards */}
       <div className="grid grid-cols-4 gap-4 p-24">
-        {categoriesList.map((category: { slug: string; name: string; image: { url: string } }) => (
-          <Card key={category.slug}>
+        {categoriesList.map((categoryItem: { slug: string; name: string; image: { url: string }; category: {} }) => (
+          <Card key={categoryItem.slug}>
             <CardHeader>
               <CardTitle>
-                {category.name}
+                {categoryItem.name}
               </CardTitle>
               <CardDescription>
                 <p>Descrição da categoria</p>
@@ -47,11 +50,11 @@ export default async function Home() {
             <CardContent>
               <Image
                 src={
-                  category.image?.url ?
-                    `http://localhost:1337${category.image?.url}` :
+                  categoryItem.image?.url ?
+                    `http://localhost:1337${categoryItem.image?.url}` :
                     `https://picsum.photos/200`
                 }
-                alt={`Categoria ${category.name}`}
+                alt={`Categoria ${categoryItem.name}`}
                 width={400}
                 height={400}
               />
@@ -59,6 +62,6 @@ export default async function Home() {
           </Card>
         ))}
       </div>
-    </div>
+    </div >
   );
 }
