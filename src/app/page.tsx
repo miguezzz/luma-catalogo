@@ -36,18 +36,18 @@ export default async function Home() {
       </div>
 
       {/* category cards */}
-      <div className="grid grid-cols-4 gap-4 p-16">
+      <div className="grid grid-cols-4 gap-4 p-16 ">
         {categoriesList.map((categoryItem: { slug: string; name: string; image: { url: string }; category: {} }) => (
-          <Card key={categoryItem.slug}>
+          <Card className="bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none" key={categoryItem.slug}>
             <CardHeader>
-              <CardTitle>
+              <CardTitle className="text-2xl">
                 {categoryItem.name}
               </CardTitle>
               <CardDescription>
                 <p>Descrição da categoria</p>
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent >
               <Image
                 src={
                   categoryItem.image?.url ?
@@ -57,6 +57,7 @@ export default async function Home() {
                 alt={`Categoria ${categoryItem.name}`}
                 width={400}
                 height={400}
+                className="rounded-2xl"
               />
             </CardContent>
           </Card>

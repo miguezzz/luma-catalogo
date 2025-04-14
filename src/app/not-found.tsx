@@ -3,7 +3,7 @@ import BalloonAnimation from "@/components/BaloonAnimation"
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-orange-400 via-pink-500 to-purple-700">
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-yellow-400 via-orange-500 to-pink-500">
       {/* Balões animados */}
       <BalloonAnimation />
 
