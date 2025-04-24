@@ -10,6 +10,14 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
+interface ICategoryItem {
+  slug: string,
+  name: string,
+  image: { url: string },
+  category: {},
+  description: string,
+}
+
 const getCategories = async () => {
   const data = await fetch('http://localhost:1337/api/categories?populate=*&pagination[pageSize]=50');
 
@@ -37,7 +45,7 @@ export default async function Home() {
 
       {/* category cards */}
       <div className="grid grid-cols-4 gap-4 p-16 overflow-hidden">
-        {categoriesList.map((categoryItem: { slug: string; name: string; image: { url: string }; category: {}; description: string }) => (
+        {categoriesList.map((categoryItem: ICategoryItem) => (
           <Link href={`/${categoryItem.slug}`} key={categoryItem.slug}>
             <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden" key={categoryItem.slug}>
               <CardHeader>
