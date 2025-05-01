@@ -19,7 +19,7 @@ interface ICategoryItem {
 }
 
 const getCategories = async () => {
-  const data = await fetch('http://localhost:1337/api/categories?populate=*&pagination[pageSize]=50');
+  const data = await fetch('https://luma-catalogo-strapi-production.up.railway.app/api/categories?populate=*&pagination[pageSize]=50');
 
   const categories = await data.json();
 
@@ -36,12 +36,10 @@ export default async function Home() {
   return (
     <div className="flex flex-col">
       {/* header */}
-      <div className="flex flex-col items-center justify-center">
-        <header className="pt-16">
-          <h1 className="flex justify-center text-6xl font-bold">Catálogo</h1>
-          <p className="text-sm pt-3 font-semibold">Clique na categoria desejada para acessar a página de produtos.</p>
-        </header>
-      </div>
+      <header className="flex flex-col pt-16 items-center justify-center">
+        <h1 className="flex justify-center text-6xl font-bold">Catálogo</h1>
+        <p className="text-sm pt-3 font-semibold">Clique na categoria desejada para acessar a página de produtos.</p>
+      </header>
 
       {/* category cards */}
       <div className="grid grid-cols-4 gap-4 p-16 overflow-hidden">
@@ -60,8 +58,8 @@ export default async function Home() {
                 <Image
                   src={
                     categoryItem.image?.url ?
-                      `http://localhost:1337${categoryItem.image?.url}` :
-                      `https://picsum.photos/200`
+                      `https://luma-catalogo-strapi-production.up.railway.app${categoryItem.image?.url}` :
+                      `https://picsum.photos/101`
                   }
                   alt={`Categoria ${categoryItem.name}`}
                   width={400}
