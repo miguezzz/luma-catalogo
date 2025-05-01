@@ -10,10 +10,10 @@ export default function CategoryLayout({ children }: { children: React.ReactNode
   return (
     <div className="flex flex-col">
       <header>
-        <div className="flex flex-col justify-start">
-          <Link href={"/"}>
-            <h1 className="flex text-xl font-bold pt-4 pl-4">Voltar para Página Inicial</h1>
-          </Link>
+        <div className="flex justify-start">
+          <h1 className="inline-block text-xl font-bold pt-4 pl-4">
+            <Link href="/">Voltar para Página Inicial</Link>
+          </h1>
         </div>
       </header>
       {children}
