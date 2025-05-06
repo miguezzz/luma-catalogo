@@ -1,9 +1,16 @@
 'use client';
 
-export default function Button({ children }: { children: React.ReactNode }) {
+type ButtonProps = {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+  'aria-label'?: string;
+};
+
+export default function Button({ children, onClick, className, ...props }: ButtonProps) {
   return (
-    <button className="bg-white text-amber-700 hover:bg-amber-700 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#9b5300] transition-all ease-in-out duration-300">
+    <button onClick={onClick} className={className}>
       {children}
-    </button>
+    </button >
   );
 }

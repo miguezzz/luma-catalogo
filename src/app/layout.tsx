@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "./globals.css";
 
+import { CartProvider } from '@/context/cart';
+import CartButton from '@/components/CartButton';
+import CartDrawer from '@/components/CartDrawer';
+
 const quicksand = Quicksand({
   variable: "--font-quicksand",
   subsets: ["latin"],
@@ -22,7 +26,11 @@ export default function RootLayout({
       <body
         className={`${quicksand.className} antialiased bg-gradient-to-b bg-fixed from-yellow-400 via-orange-500 to-pink-500`}
       >
-        {children}
+        <CartProvider>
+          <CartButton />
+          <CartDrawer />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );
