@@ -22,10 +22,19 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import ProductCard from '@/components/ProductCard';
+import CategoryCard from '@/components/CategoryCard';
+
 interface IProductItem {
   id: number,
   name: string,
   slug: string,
+  SKU: string,
+  inStock: boolean,
+  minAtacarejoQty: number,
+  minAtacadoQty: number,
+  priceAtacarejo: number,
+  priceAtacado: number,
   description: string,
   images: any[],
 };
@@ -156,30 +165,22 @@ export default async function CategoryPage({ params }: { params: { category: str
       {!hasSubcategories && hasProducts && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-8">
           {category.products.map((productItem) => (
-            <Card key={productItem.slug} className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-sm border-none transform hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-140 overflow-hidden">
-              <CardHeader>
-                <CardTitle className="text-2xl">{productItem.name}</CardTitle>
-                <CardDescription className="text-xm text-shadow-sm text-gray-500 mb-2">
-                  {productItem.description || ''}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Image
-                  src={
-                    productItem.images?.[0]?.url
-                      ? `https://luma-catalogo-strapi-production.up.railway.app${productItem.images[0].url}`
-                      : `https://picsum.photos/400`
-                  }
-                  alt={`Produto ${productItem.name}`}
-                  width={400}
-                  height={400}
-                  className="flex rounded-2xl object-cover object-center w-full h-85 mb-2"
-                />
-              </CardContent>
-              <CardFooter className="flex justify-center items-center rounded-3xl">
-                <Button className="bg-white text-amber-700 hover:bg-amber-700 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#9b5300] transition-all ease-in-out duration-300">Comprar</Button>
-              </CardFooter>
-            </Card>
+            <ProductCard
+              key={productItem.id}
+              product={{
+                id: productItem.id,
+                name: productItem.name,
+                description: productItem.description,
+                SKU: productItem.SKU,
+                inStock: productItem.inStock,
+                slug: productItem.slug,
+                images: productItem.images,
+                priceAtacarejo: productItem.priceAtacarejo,
+                priceAtacado: productItem.priceAtacado,
+                minAtacarejoQty: productItem.minAtacarejoQty,
+                minAtacadoQty: productItem.minAtacadoQty,
+              }}
+            />
           ))}
         </div>
       )}
