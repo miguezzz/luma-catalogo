@@ -7,11 +7,11 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Button from './Button';
 import dynamic from 'next/dynamic';
+import { div } from 'framer-motion/client';
+import { stringify } from 'querystring';
 
 // Importa o modal apenas no client, sem SSR
-const ProductModal = dynamic(() => import('./ProductModal'), {
-  ssr: false,
-});
+import ProductModal from './ProductModal';
 
 interface Props {
   product: {
@@ -60,6 +60,12 @@ export default function ProductCard({ product }: Props) {
           </Button>
         </CardFooter>
       </Card>
+
+      {/* {open && (
+        <div>
+          <p>{product.name}</p>
+        </div>
+      )} */}
 
       {open && (
         <ProductModal
