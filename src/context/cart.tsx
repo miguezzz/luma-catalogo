@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-interface CartItem {
+export interface CartItem {
   id: number;
   name: string;
   slug: string;
@@ -10,8 +10,7 @@ interface CartItem {
   inStock: boolean;
   minAtacarejoQty: number;
   minAtacadoQty: number;
-  priceAtacado: number;
-  priceAtacarejo: number;
+  price: number
   SKU: string;
   imageUrl: string | null;
   qty: number;
