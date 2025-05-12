@@ -1,12 +1,24 @@
 // src/components/CartDrawer.tsx
 'use client';
 import { useCart } from '@/context/cart';
+import { buildWhatsAppMessage } from '@/utils/whatsapp';
+import { Phone } from 'lucide-react';
+
 import Image from 'next/image';
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion'; // opcional p/ animações
 
 export default function CartDrawer() {
   const { isOpen, closeCart, items } = useCart();
+  const phone = '5511974880794';
+
+  function handleCheckout() {
+    if (items.length === 0) return;
+    const text = buildWhatsAppMessage(items, phone);
+    const url = `https://wa.me/${phone}?text=${text}`;
+    // abre o chat num nova aba/janela
+    window.open(url, '_blank');
+  }
 
   return (
     <>
@@ -44,7 +56,7 @@ export default function CartDrawer() {
                 <div className="flex-1">
                   <p className="font-medium">{item.name}</p>
                   <p className="text-sm text-gray-600">
-                    {item.qty} × R$ {item.priceAtacado.toFixed(2)}
+                    {item.qty} × R$ {item.price.toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -54,10 +66,8 @@ export default function CartDrawer() {
 
         <footer className="p-4 border-t">
           <button
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-            onClick={() => {
-              /* chamar método de checkout (abrir WhatsApp etc) */
-            }}
+            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300"
+            onClick={handleCheckout}
           >
             Finalizar Pedido
           </button>

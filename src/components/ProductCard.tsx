@@ -10,7 +10,6 @@ import dynamic from 'next/dynamic';
 import { div } from 'framer-motion/client';
 import { stringify } from 'querystring';
 
-// Importa o modal apenas no client, sem SSR
 import ProductModal from './ProductModal';
 
 interface Props {
@@ -60,12 +59,6 @@ export default function ProductCard({ product }: Props) {
           </Button>
         </CardFooter>
       </Card>
-
-      {/* {open && (
-        <div>
-          <p>{product.name}</p>
-        </div>
-      )} */}
 
       {open && (
         <ProductModal
