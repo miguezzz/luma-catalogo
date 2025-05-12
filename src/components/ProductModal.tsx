@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useCart } from '@/context/cart';
+import { toast, Toaster } from "sonner"
 
 interface Product {
   id: number;
@@ -74,11 +75,11 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
           )}
 
           <div className="flex flex-col justify-center mb-4">
-            <p className="text-sm text-gray-600">
-              Atacarejo: R$ {product.priceAtacarejo.toFixed(2)} (mín {product.minAtacarejoQty})
+            <p className="text-bold text-gray-600">
+              Preço Atacarejo: R$ {product.priceAtacarejo.toFixed(2)} (mín {product.minAtacarejoQty})
             </p>
-            <p className="text-sm text-gray-600">
-              Atacado: R$ {product.priceAtacado.toFixed(2)} (mín {product.minAtacadoQty})
+            <p className="text-bold text-gray-600">
+              Preço Atacado: R$ {product.priceAtacado.toFixed(2)} (mín {product.minAtacadoQty})
             </p>
           </div>
 
@@ -88,7 +89,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
               <input
                 type="radio"
                 name="mode"
-                className="form-radio"
+                className="form-radio accent-amber-800"
                 checked={mode === 'atacarejo'}
                 onChange={() => setMode('atacarejo')}
               />
@@ -98,7 +99,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
               <input
                 type="radio"
                 name="mode"
-                className="form-radio"
+                className="form-radio accent-amber-800"
                 checked={mode === 'atacado'}
                 onChange={() => setMode('atacado')}
               />
@@ -125,8 +126,9 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
           </div>
 
           <button
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300"
             onClick={() => {
+              toast("Produtos adicionados ao carrinho!")
               addItem({
                 id: product.id,
                 name: product.name,
@@ -134,13 +136,13 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
                   ? product.priceAtacarejo
                   : product.priceAtacado,
                 qty,
-                slug: '',
-                description: '',
-                inStock: false,
-                minAtacarejoQty: 0,
-                minAtacadoQty: 0,
-                SKU: '',
-                imageUrl: null
+                slug: product.slug,
+                description: product.description,
+                inStock: product.inStock,
+                minAtacarejoQty: product.minAtacarejoQty,
+                minAtacadoQty: product.minAtacadoQty,
+                SKU: product.SKU,
+                imageUrl: product.imageUrl,
               });
               onClose();
             }}
@@ -149,8 +151,6 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
           </button>
         </div>
       </div>
-
-
     </>,
     document.body
   );

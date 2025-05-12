@@ -5,6 +5,7 @@ import "./globals.css";
 import { CartProvider } from '@/context/cart';
 import CartButton from '@/components/CartButton';
 import CartDrawer from '@/components/CartDrawer';
+import { Toaster } from "@/components/ui/sonner";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
@@ -30,6 +31,7 @@ export default function RootLayout({
           <CartButton />
           <CartDrawer />
           {children}
+          <Toaster />
         </CartProvider>
       </body>
     </html>
