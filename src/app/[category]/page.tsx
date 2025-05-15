@@ -144,17 +144,15 @@ export default async function CategoryPage({ params }: { params: { category: str
                     {subcategory.description || ''}
                   </CardDescription>
                 </CardHeader>
-                {subcategory.image && (
-                  <CardContent>
-                    <Image
-                      src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${subcategory.slug}.png`}
-                      alt={`Subcategoria ${subcategory.name}`}
-                      width={300}
-                      height={300}
-                      className="flex rounded-2xl object-cover object-center w-full h-100 mb-4"
-                    />
-                  </CardContent>
-                )}
+                <CardContent>
+                  <Image
+                    src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${subcategory.slug}.png`}
+                    alt={`Subcategoria ${subcategory.name}`}
+                    width={300}
+                    height={300}
+                    className="flex rounded-2xl object-cover object-center w-full h-100 mb-4"
+                  />
+                </CardContent>
               </Card>
             </Link>
           ))}
