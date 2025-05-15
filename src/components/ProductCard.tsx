@@ -42,11 +42,7 @@ export default function ProductCard({ product }: Props) {
         </CardHeader>
         <CardContent>
           <Image
-            src={
-              product.images?.[0]?.url
-                ? `https://luma-catalogo-strapi-production.up.railway.app${product.images[0].url}`
-                : `https://picsum.photos/400`
-            }
+            src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${product.slug}.png`}
             alt={`Produto ${product.name}`}
             width={400}
             height={400}
@@ -78,6 +74,7 @@ export default function ProductCard({ product }: Props) {
           }}
           isOpen={open}
           onClose={() => setOpen(false)}
+          parentSlug={product.slug} // Pass the slug to the modal
         />
       )}
     </>

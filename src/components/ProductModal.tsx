@@ -26,9 +26,10 @@ interface ProductModalProps {
   product: Product;
   isOpen: boolean;
   onClose(): void;
+  parentSlug: string;
 }
 
-export default function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
+export default function ProductModal({ product, isOpen, onClose, parentSlug }: ProductModalProps) {
   const { addItem } = useCart();
   const [mode, setMode] = useState<'atacarejo' | 'atacado'>('atacarejo');
   const [qty, setQty] = useState(1);
@@ -64,15 +65,14 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
 
           {/* conteúdo */}
           <h2 className="text-2xl font-bold mb-4">{product.name}</h2>
-          {product.imageUrl && (
-            <img
-              src={`https://luma-catalogo-strapi-production.up.railway.app${product.imageUrl}`}
-              alt={product.name}
-              width={400}
-              height={400}
-              className="w-full h-7/12 object-cover rounded-lg mb-4"
-            />
-          )}
+          <img
+            src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${parentSlug}.png`}
+            alt={product.name}
+            width={400}
+            height={400}
+            className="w-full h-7/12 object-cover rounded-lg mb-4"
+          />
+
 
           <div className="flex flex-col justify-center mb-4">
             <p className="text-bold text-gray-600">
@@ -128,7 +128,7 @@ export default function ProductModal({ product, isOpen, onClose }: ProductModalP
           <button
             className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300"
             onClick={() => {
-              toast("Produtos adicionados ao carrinho!")
+              toast("Produtos adicionado(s ao carrinho!")
               addItem({
                 id: product.id,
                 name: product.name,

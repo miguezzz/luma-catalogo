@@ -147,7 +147,7 @@ export default async function CategoryPage({ params }: { params: { category: str
                 {subcategory.image && (
                   <CardContent>
                     <Image
-                      src={`https://luma-catalogo-strapi-production.up.railway.app${subcategory.image.url}`}
+                      src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${subcategory.slug}.png`}
                       alt={`Subcategoria ${subcategory.name}`}
                       width={300}
                       height={300}

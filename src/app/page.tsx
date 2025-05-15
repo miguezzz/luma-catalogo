@@ -56,11 +56,7 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={
-                    categoryItem.image?.url ?
-                      `https://luma-catalogo-strapi-production.up.railway.app${categoryItem.image?.url}` :
-                      `https://picsum.photos/101`
-                  }
+                  src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${categoryItem.slug}.png`}
                   alt={`Categoria ${categoryItem.name}`}
                   width={400}
                   height={400}

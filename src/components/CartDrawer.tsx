@@ -52,11 +52,11 @@ export default function CartDrawer() {
             items.map((item) => (
               <div key={item.id} className="flex items-center space-x-3">
                 {/* Exemplo, se tiver imagem */}
-                {/* <Image src={item.image} width={48} height={48} alt={item.name} /> */}
+                {/* <Image src={item.imageUrl || '/placeholder.png'} width={48} height={48} alt={item.name} /> */}
                 <div className="flex-1">
                   <p className="font-medium">{item.name}</p>
                   <p className="text-sm text-gray-600">
-                    {item.qty} × R$ {item.price.toFixed(2)} = R$ {(item.price * item.qty).toFixed(2)}
+                    {item.qty} Unidades × R$ {item.price.toFixed(2)} = R$ {(item.price * item.qty).toFixed(2)}
                   </p>
                 </div>
               </div>
