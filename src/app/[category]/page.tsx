@@ -129,15 +129,15 @@ export default async function CategoryPage({ params }: { params: { category: str
   return (
     <div className="flex flex-col">
       <header className="flex flex-col pt-8 items-center justify-center">
-        <h1 className="text-3xl font-bold my-6">{category.name}</h1>
+        <h1 className="text-3xl 2xl:text-5xl font-bold my-6">{category.name}</h1>
       </header>
 
       {/* caso haja subcategorias, as renderizaremos */}
       {hasSubcategories && (
-        <div className="grid grid-cols-4 gap-4 p-16 overflow-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center place-items-center">
           {category.categories.map((subcategory) => (
             <Link href={`/${subcategory.slug}`} key={subcategory.slug}>
-              <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden">
+              <Card className="flex w-full bg-white/20 backdrop-blur-md rounded-xl shadow-xl min-w-[350px] border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden">
                 <CardHeader>
                   <CardTitle className="text-xl">{subcategory.name}</CardTitle>
                   <CardDescription className="text-sm text-gray-500">
@@ -161,24 +161,25 @@ export default async function CategoryPage({ params }: { params: { category: str
 
       {/* caso não haja subcategorias, renderizaremos os produtos */}
       {!hasSubcategories && hasProducts && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center items-center  2xl:bg-amber-400">
           {category.products.map((productItem) => (
-            <ProductCard
-              key={productItem.id}
-              product={{
-                id: productItem.id,
-                name: productItem.name,
-                description: productItem.description,
-                SKU: productItem.SKU,
-                inStock: productItem.inStock,
-                slug: productItem.slug,
-                images: productItem.images,
-                priceAtacarejo: productItem.priceAtacarejo,
-                priceAtacado: productItem.priceAtacado,
-                minAtacarejoQty: productItem.minAtacarejoQty,
-                minAtacadoQty: productItem.minAtacadoQty,
-              }}
-            />
+            <div key={productItem.id} className="flex w-full justify-center items-center">
+              <ProductCard
+                product={{
+                  id: productItem.id,
+                  name: productItem.name,
+                  description: productItem.description,
+                  SKU: productItem.SKU,
+                  inStock: productItem.inStock,
+                  slug: productItem.slug,
+                  images: productItem.images,
+                  priceAtacarejo: productItem.priceAtacarejo,
+                  priceAtacado: productItem.priceAtacado,
+                  minAtacarejoQty: productItem.minAtacarejoQty,
+                  minAtacadoQty: productItem.minAtacadoQty,
+                }}
+              />
+            </div>
           ))}
         </div>
       )}
