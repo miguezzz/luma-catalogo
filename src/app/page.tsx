@@ -12,6 +12,7 @@ interface ICategoryItem {
   slug: string,
   name: string,
   image: { url: string },
+  // eslint-disable-next-line @typescript-eslint/ban-types
   category: {},
   description: string,
 }
@@ -27,6 +28,7 @@ const getCategories = async () => {
 export default async function Home() {
   const fullCategoriesList = await getCategories();
 
+  // eslint-disable-next-line @typescript-eslint/ban-types
   const categoriesList = fullCategoriesList.filter((categoryItem: { category: {} }) => {
     return categoryItem.category === null;
   });
