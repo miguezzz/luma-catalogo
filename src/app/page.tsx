@@ -38,19 +38,19 @@ export default async function Home() {
       {/* header */}
       <header className="flex flex-col pt-16 items-center justify-center">
         <h1 className="flex justify-center text-6xl font-bold">Catálogo</h1>
-        <p className="text-sm pt-3 font-semibold">Clique na categoria desejada para acessar a página de produtos.</p>
+        <p className="text-sm pt-3 font-semibold 2xl:text-2xl">Clique na categoria desejada para acessar a página de produtos.</p>
       </header>
 
       {/* category cards */}
       <div className="grid grid-cols-4 gap-4 p-16 overflow-hidden">
         {categoriesList.map((categoryItem: ICategoryItem) => (
           <Link href={`/${categoryItem.slug}`} key={categoryItem.slug}>
-            <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden" key={categoryItem.slug}>
+            <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 2xl:h-138 overflow-hidden" key={categoryItem.slug}>
               <CardHeader>
-                <CardTitle className="text-2xl">
+                <CardTitle className="text-2xl 2xl:text-3xl 2xl:font-bold">
                   {categoryItem.name}
                 </CardTitle>
-                <CardDescription className="text-xm text-shadow-sm text-gray-500 mb-2">
+                <CardDescription className="text-xm text-gray-900 mb-2 2xl:mb-0 2xl:text-lg font-medium">
                   <p>{categoryItem.description}</p>
                 </CardDescription>
               </CardHeader>
