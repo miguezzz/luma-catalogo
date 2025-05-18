@@ -54,7 +54,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
 
       {/* modal */}
       <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl w-full xl:max-w-1/3 2xl:max-w-1/3 p-6 shadow-[0_0_20px_rgba(255,255,255,1)] relative h-10/12 2xl:h-11/12 2xl:text-2xl">
+        <div className="bg-white rounded-2xl w-full xl:max-w-1/3 2xl:max-w-1/3 p-6 shadow-[0_0_20px_rgba(255,255,255,1)] relative h-auto 2xl:h-11/12 2xl:text-2xl">
           {/* close */}
           <button
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
@@ -110,7 +110,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
             <label className="block text-sm mb-1 2xl:text-2xl">Quantidade (Pacotes)</label>
             <input
               type="number"
-              className="w-full border-3 rounded px-3 py-2"
+              className="w-full border-3 rounded px-3 py-0 xl:py-2"
               min={mode === 'atacarejo' ? product.minAtacarejoQty : product.minAtacadoQty}
               step={mode === 'atacarejo' ? product.minAtacarejoQty : product.minAtacadoQty}
               value={qty}
@@ -127,7 +127,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
           </div>
 
           <button
-            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300 2xl:mt-5 2xl:py-4"
+            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-1 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300 2xl:mt-5 2xl:py-4"
             onClick={() => {
               if (qty < 1 || isNaN(qty)) {
                 toast.error("Quantidade mínima é 1");
