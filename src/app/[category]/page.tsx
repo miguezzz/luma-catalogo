@@ -138,7 +138,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* caso haja subcategorias, as renderizaremos */}
       {hasSubcategories && (
-        <div className="grid grid-cols-2 md-grid-cols-4 xl:grid-cols-3 2xl:grid-cols-4 gap-4 px-8 justify-center place-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 px-8 justify-center place-items-center">
           {category.categories.map((subcategory) => (
             <Link href={`/${subcategory.slug}`} key={subcategory.slug}>
               <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-85 2xl:h-138 overflow-hidden">
