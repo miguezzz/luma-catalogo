@@ -12,7 +12,6 @@ const quicksand = Quicksand({
   subsets: ["latin"],
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const metadata: Metadata = {
   title: "Catálogo Luma Festas",
   description: "Catálogo de produtos Luma Festas",

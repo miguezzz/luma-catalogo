@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 // adicionar titulo correto
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const metadata: Metadata = {
   title: `${2} - Catálogo Luma Festas`,
 }
