@@ -129,7 +129,7 @@ export default async function CategoryPage({ params }: { params: { category: str
   return (
     <div className="flex flex-col">
       <header className="flex flex-col pt-8 items-center justify-center">
-        <h1 className="text-3xl 2xl:text-5xl font-bold my-6">{category.name}</h1>
+        <h1 className="text-3xl 2xl:text-5xl font-bold mb-8">{category.name}</h1>
       </header>
 
       {/* caso haja subcategorias, as renderizaremos */}
@@ -161,7 +161,7 @@ export default async function CategoryPage({ params }: { params: { category: str
 
       {/* caso não haja subcategorias, renderizaremos os produtos */}
       {!hasSubcategories && hasProducts && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center items-center  2xl:bg-amber-400">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center items-center 2xl:text-2xl ">
           {category.products.map((productItem) => (
             <div key={productItem.id} className="flex w-full justify-center items-center">
               <ProductCard
