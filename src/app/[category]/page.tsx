@@ -1,18 +1,17 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import Button from '@/components/Button';
 
 import qs from "qs";
 
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
+// import {
+//   Breadcrumb,
+//   BreadcrumbItem,
+//   BreadcrumbLink,
+//   BreadcrumbList,
+//   BreadcrumbPage,
+//   BreadcrumbSeparator,
+// } from "@/components/ui/breadcrumb"
 import {
   Card,
   CardContent,
@@ -23,7 +22,7 @@ import {
 } from "@/components/ui/card"
 
 import ProductCard from '@/components/ProductCard';
-import CategoryCard from '@/components/CategoryCard';
+// import CategoryCard from '@/components/CategoryCard';
 
 interface IProductItem {
   id: number,
@@ -36,7 +35,7 @@ interface IProductItem {
   priceAtacarejo: number,
   priceAtacado: number,
   description: string,
-  images: any[],
+  images: any[], // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
 interface ICategoryItem {
@@ -127,7 +126,7 @@ export default async function CategoryPage({ params }: { params: { category: str
   console.log(category);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mb-8">
       <header className="flex flex-col pt-8 items-center justify-center">
         <h1 className="text-3xl 2xl:text-5xl font-bold mb-8">{category.name}</h1>
       </header>

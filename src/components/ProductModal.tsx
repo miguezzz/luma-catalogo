@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useCart } from '@/context/cart';
-import { toast, Toaster } from "sonner"
+import { toast } from "sonner"
 
 interface Product {
   id: number;
