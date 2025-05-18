@@ -33,7 +33,7 @@ export default function ProductCard({ product }: Props) {
       <Card key={product.slug} className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl w-full border-none transform hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-140 overflow-hidden">
         <CardHeader>
           <CardTitle className="text-2xl">{product.name}</CardTitle>
-          <CardDescription className="text-xm 2xl:text-lg font-medium text-gray-900 mb-2 2xl:mb-1">
+          <CardDescription className="text-xm md:text-lg 2xl:text-lg font-medium text-gray-900 mb-2 2xl:mb-1">
             {product.description || ''}
           </CardDescription>
         </CardHeader>

@@ -12,7 +12,7 @@ export default function CategoryLayout({ children }: { children: React.ReactNode
     <div className="flex flex-col">
       <header>
         <div className="flex justify-start">
-          <h1 className="inline-block text-xl 2xl:text-3xl font-bold pt-4 pl-4">
+          <h1 className="inline-block text-xl md:text-3xl 2xl:text-3xl font-bold pt-4 pl-4">
             <Link href="/">Voltar para Página Inicial</Link>
           </h1>
         </div>
