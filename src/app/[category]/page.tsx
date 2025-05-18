@@ -139,8 +139,8 @@ export default async function CategoryPage({ params }: { params: { category: str
             <Link href={`/${subcategory.slug}`} key={subcategory.slug}>
               <Card className="flex w-full bg-white/20 backdrop-blur-md rounded-xl shadow-xl min-w-[350px] border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden">
                 <CardHeader>
-                  <CardTitle className="text-xl">{subcategory.name}</CardTitle>
-                  <CardDescription className="text-sm text-gray-900 2xl:text-lg font-medium">
+                  <CardTitle className="text-2xl font-bold">{subcategory.name}</CardTitle>
+                  <CardDescription className="text-xl text-gray-900 2xl:text-lg font-semibold">
                     {subcategory.description || ''}
                   </CardDescription>
                 </CardHeader>

@@ -50,7 +50,7 @@ export default async function Home() {
                 <CardTitle className="text-2xl 2xl:text-3xl 2xl:font-bold">
                   {categoryItem.name}
                 </CardTitle>
-                <CardDescription className="text-xm text-gray-900 mb-2 2xl:mb-0 2xl:text-lg font-medium">
+                <CardDescription className="text-xm text-gray-900 mb-2 2xl:mb-0 2xl:text-lg font-semibold">
                   <p>{categoryItem.description}</p>
                 </CardDescription>
               </CardHeader>
