@@ -3,6 +3,7 @@ import { CartItem } from '@/context/cart';
 
 export function buildWhatsAppMessage(
   items: CartItem[],
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   phoneNumber: string, // no formato “5511999999999” (DDD+cel sem “+”)
 ): string {
   const header = 'Olá, gostaria de finalizar meu pedido:\n\n';
