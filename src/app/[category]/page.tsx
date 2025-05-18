@@ -22,6 +22,12 @@ import {
 import ProductCard from '@/components/ProductCard';
 // import CategoryCard from '@/components/CategoryCard';
 
+interface PageProps {
+  params: {
+    category: string;
+  };
+}
+
 interface IProductItem {
   id: number,
   name: string,
@@ -102,7 +108,7 @@ async function getCategoryData(slug: string) {
   return json.data?.[0] || null;
 }
 
-export default async function CategoryPage({ params }: { params: { category: string } }) {
+export default async function CategoryPage({ params }: PageProps) {
   const categoryData = await getCategoryData(params.category);
   if (!categoryData) {
     notFound();
