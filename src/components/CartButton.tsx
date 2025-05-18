@@ -9,11 +9,11 @@ export default function CartButton() {
   const { openCart } = useCart();
   return (
     <Button
-      className="fixed top-4 right-4 z-50 p-2 bg-white rounded-full shadow hover:bg-gray-100"
+      className="fixed top-4 right-4 z-50 p-2 2xl:p-4 bg-white rounded-full shadow hover:bg-gray-100"
       onClick={openCart}
       aria-label="Abrir carrinho"
     >
-      <ShoppingCart className="h-6 w-6 text-gray-800" />
+      <ShoppingCart className="h-6 w-6 2xl:h-10 2xl:w-10 text-gray-800" />
     </Button>
   );
 }
