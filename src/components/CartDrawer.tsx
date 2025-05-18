@@ -2,9 +2,8 @@
 'use client';
 import { useCart } from '@/context/cart';
 import { buildWhatsAppMessage } from '@/utils/whatsapp';
-import { Phone } from 'lucide-react';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import { X } from 'lucide-react';
 import { motion } from 'framer-motion'; // opcional p/ animações
 

@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import { useCart } from '@/context/cart';
@@ -64,15 +65,13 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
           </button>
 
           {/* conteúdo */}
-          <h2 className="text-2xl 2xl:text-4xl font-bold mb-4">{product.name}</h2>
-          <img
+          <Image
             src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${parentSlug}.png`}
             alt={product.name}
             width={400}
             height={400}
-            className="w-full h-7/12 object-cover rounded-lg mb-4"
+            className="w-full mt-7 h-7/12 object-cover rounded-lg mb-4"
           />
-
 
           <div className="flex flex-col justify-center mb-4">
             <p className="text-bold text-gray-600">
