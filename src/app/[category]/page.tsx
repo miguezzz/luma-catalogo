@@ -127,8 +127,9 @@ export default async function CategoryPage({ params }: { params: { category: str
 
   return (
     <div className="flex flex-col mb-8">
-      <header className="flex flex-col pt-8 items-center justify-center">
-        <h1 className="text-3xl 2xl:text-5xl font-bold mb-8">{category.name}</h1>
+      <header className="flex flex-col pt-8 items-center justify-center mb-8">
+        <h1 className="text-3xl 2xl:text-5xl font-bold">{category.name}</h1>
+        <p className="text-xl 2xl:text-2xl">Clique e escolha o tamanho desejado</p>
       </header>
 
       {/* caso haja subcategorias, as renderizaremos */}
@@ -138,10 +139,12 @@ export default async function CategoryPage({ params }: { params: { category: str
             <Link href={`/${subcategory.slug}`} key={subcategory.slug}>
               <Card className="flex w-full bg-white/20 backdrop-blur-md rounded-xl shadow-xl min-w-[350px] border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">{subcategory.name}</CardTitle>
-                  <CardDescription className="text-xl text-gray-900 2xl:text-lg font-semibold">
+                  <CardTitle className="text-2xl font-bold">
+                    {subcategory.name}
+                  </CardTitle>
+                  {/* <CardDescription className="text-xl text-gray-900 2xl:text-lg font-semibold">
                     {subcategory.description || ''}
-                  </CardDescription>
+                  </CardDescription> */}
                 </CardHeader>
                 <CardContent>
                   <Image

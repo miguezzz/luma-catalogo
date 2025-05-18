@@ -38,11 +38,11 @@ export default async function Home() {
       {/* header */}
       <header className="flex flex-col pt-16 items-center justify-center">
         <h1 className="flex justify-center text-6xl font-bold">Catálogo</h1>
-        <p className="text-sm pt-3 font-semibold 2xl:text-2xl">Clique na categoria desejada para acessar a página de produtos.</p>
+        <p className="flex text-sm justify-center pl-6 xl:pl-0 2xl:pl-0 md:pl-0 pt-3 font-semibold 2xl:text-2xl">Clique na categoria desejada para acessar a página de produtos.</p>
       </header>
 
       {/* category cards */}
-      <div className="grid grid-cols-4 gap-4 p-16 overflow-hidden">
+      <div className="grid grid-cols-1 p-4 gap-4 2xl:p-16 overflow-hidden 2xl:grid-cols-4">
         {categoriesList.map((categoryItem: ICategoryItem) => (
           <Link href={`/${categoryItem.slug}`} key={categoryItem.slug}>
             <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 2xl:h-138 overflow-hidden" key={categoryItem.slug}>
