@@ -134,12 +134,12 @@ export default async function CategoryPage({ params }: { params: { category: str
 
       {/* caso haja subcategorias, as renderizaremos */}
       {hasSubcategories && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center place-items-center">
+        <div className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 px-8 justify-center place-items-center">
           {category.categories.map((subcategory) => (
             <Link href={`/${subcategory.slug}`} key={subcategory.slug}>
-              <Card className="flex w-full bg-white/20 backdrop-blur-md rounded-xl shadow-xl min-w-[350px] border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 overflow-hidden">
+              <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-85 2xl:h-138 overflow-hidden">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">
+                  <CardTitle className="text-xl 2xl:text-2xl font-bold">
                     {subcategory.name}
                   </CardTitle>
                   {/* <CardDescription className="text-xl text-gray-900 2xl:text-lg font-semibold">
@@ -150,9 +150,9 @@ export default async function CategoryPage({ params }: { params: { category: str
                   <Image
                     src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${subcategory.slug}.png`}
                     alt={`Subcategoria ${subcategory.name}`}
-                    width={300}
-                    height={300}
-                    className="flex rounded-2xl object-cover object-center w-full h-100 mb-4"
+                    width={400}
+                    height={400}
+                    className="flex rounded-2xl object-cover object-center w-full h-50 2xl:h-100 mb-4"
                   />
                 </CardContent>
               </Card>

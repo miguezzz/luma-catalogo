@@ -6,9 +6,6 @@ import { useState } from 'react';
 // import ProductModal from './ProductModal';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import Button from './Button';
-import dynamic from 'next/dynamic';
-import { div } from 'framer-motion/client';
-import { stringify } from 'querystring';
 
 import ProductModal from './ProductModal';
 
