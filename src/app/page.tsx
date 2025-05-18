@@ -1,8 +1,6 @@
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -42,17 +40,17 @@ export default async function Home() {
       </header>
 
       {/* category cards */}
-      <div className="grid grid-cols-1 p-4 gap-4 2xl:p-16 overflow-hidden 2xl:grid-cols-4">
+      <div className="grid grid-cols-2 p-4 gap-4 2xl:p-16 2xl:grid-cols-4">
         {categoriesList.map((categoryItem: ICategoryItem) => (
           <Link href={`/${categoryItem.slug}`} key={categoryItem.slug}>
-            <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-135 2xl:h-138 overflow-hidden" key={categoryItem.slug}>
+            <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-75 2xl:h-138 overflow-hidden" key={categoryItem.slug}>
               <CardHeader>
                 <CardTitle className="text-2xl 2xl:text-3xl 2xl:font-bold">
                   {categoryItem.name}
                 </CardTitle>
-                <CardDescription className="text-xm text-gray-900 mb-2 2xl:mb-0 2xl:text-lg font-semibold">
+                {/* <CardDescription className="text-xm text-gray-900 2xl:mb-2 2xl:text-lg font-semibold">
                   <p>{categoryItem.description}</p>
-                </CardDescription>
+                </CardDescription> */}
               </CardHeader>
               <CardContent>
                 <Image
@@ -60,7 +58,7 @@ export default async function Home() {
                   alt={`Categoria ${categoryItem.name}`}
                   width={400}
                   height={400}
-                  className="flex rounded-2xl object-cover object-center w-full h-100 mb-4"
+                  className="flex rounded-2xl object-cover object-center w-full h-50 2xl:h-100 mb-4"
                 />
               </CardContent>
             </Card>
