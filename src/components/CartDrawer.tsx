@@ -66,13 +66,13 @@ export default function CartDrawer() {
 
         <footer className="p-4 border-t">
           <div className="flex justify-between items-center mb-4">
-            <span className="text-lg font-semibold">Total:</span>
-            <span className="text-lg font-semibold">
+            <span className="text-lg font-semibold 2xl:text-2xl">Total:</span>
+            <span className="text-lg font-semibold 2xl:text-2xl">
               R$ {items.reduce((total, item) => total + item.price * item.qty, 0).toFixed(2)}
             </span>
           </div>
           <button
-            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300"
+            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-2 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300 2xl:text-xl"
             onClick={handleCheckout}
           >
             Finalizar Pedido
