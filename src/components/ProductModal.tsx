@@ -65,11 +65,12 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
           </button>
 
           {/* conteúdo */}
+          <h2 className="text-2xl font-bold text-center mb-1">{product.name}</h2>
           <Image
             src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${parentSlug}.png`}
             alt={product.name}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="w-full mt-7 h-7/12 object-cover rounded-lg mb-4"
           />
 
@@ -106,7 +107,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
             </label>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-2">
             <label className="block text-sm mb-1 2xl:text-2xl">Quantidade (Pacotes)</label>
             <input
               type="number"
@@ -127,7 +128,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
           </div>
 
           <button
-            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-1 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300 2xl:mt-5 2xl:py-4"
+            className="w-full bg-amber-600 text-white hover:bg-pink-400 hover:text-white border-none font-bold py-1 px-8 rounded-3xl transform hover:shadow-[0_0_30px_#ff5bef] transition-all ease-in-out duration-300 2xl:mt-2 2xl:py-2"
             onClick={() => {
               if (qty < 1 || isNaN(qty)) {
                 toast.error("Quantidade mínima é 1");

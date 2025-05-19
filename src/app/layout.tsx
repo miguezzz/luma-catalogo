@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html className="light" lang="en">
       <body
-        className={`${quicksand.className} antialiased bg-gradient-to-b bg-fixed from-yellow-400 via-orange-500 to-pink-500`}
+        className={`${quicksand.className} min-h-screen antialiased bg-gradient-to-b bg-fixed from-yellow-400 via-orange-500 to-pink-500`}
       >
         <CartProvider>
           <CartButton />
