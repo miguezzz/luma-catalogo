@@ -54,7 +54,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
 
       {/* modal */}
       <div className="fixed inset-0 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl w-full xl:max-w-1/3 2xl:max-w-1/3 p-6 shadow-[0_0_20px_rgba(255,255,255,1)] relative h-auto 2xl:h-11/12 2xl:text-2xl">
+        <div className="bg-white rounded-2xl w-full xl:max-w-1/3 2xl:max-w-1/3 p-6 shadow-[0_0_20px_rgba(255,255,255,1)] relative h-auto 2xl:h-24/24 2xl:text-2xl">
           {/* close */}
           <button
             className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
@@ -74,7 +74,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
             className="w-full mt-7 h-7/12 object-cover rounded-lg mb-4"
           />
 
-          <div className="flex flex-col justify-center mb-4">
+          <div className="flex flex-col justify-center mb-2">
             <p className="text-bold text-gray-600">
               Preço Atacarejo: R$ {product.priceAtacarejo.toFixed(2)}
             </p>
