@@ -55,7 +55,7 @@ export default function CartDrawer() {
                 <div className="flex-1">
                   <p className="font-medium md:text-xl 2xl:text-2xl">{item.name}</p>
                   <p className="text-sm text-gray-600 md:text-xl 2xl:text-xl">
-                    {item.qty} {item.qty > 1 ? 'Unidades' : 'unidade'} × R$ {item.price.toFixed(2)} = R$ {(item.price * item.qty).toFixed(2)}
+                    {item.qty} {item.qty > 1 ? 'Unidades' : 'Unidade'} × R$ {item.price.toFixed(2)} = R$ {(item.price * item.qty).toFixed(2)}
                   </p>
                 </div>
               </div>
