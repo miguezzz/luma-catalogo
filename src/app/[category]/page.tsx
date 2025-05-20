@@ -167,7 +167,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
       {/* caso não haja subcategorias, renderizaremos os produtos */}
       {!hasSubcategories && hasProducts && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center items-center 2xl:text-2xl ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-8 px-8 justify-center items-center 2xl:text-2xl ">
           {category.products.map((productItem) => (
             <div key={productItem.id} className="flex w-full justify-center items-center">
               <ProductCard
