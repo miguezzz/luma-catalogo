@@ -18,7 +18,7 @@ interface ICategoryItem {
 }
 
 const getCategories = async () => {
-  const data = await fetch('https://luma-catalogo-strapi-production.up.railway.app/api/categories?populate=*&pagination[pageSize]=50');
+  const data = await fetch('https://luma-catalogo-strapi-production.up.railway.app/api/categories?populate=*&pagination[pageSize]=150');
 
   const categories = await data.json();
 
