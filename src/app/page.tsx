@@ -47,7 +47,7 @@ export default async function Home() {
           <Link href={`/${categoryItem.slug}`} key={categoryItem.slug}>
             <Card className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl max-w-md border-none transform hover:scale-101 hover:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-75 md:h-115 2xl:h-138 overflow-hidden" key={categoryItem.slug}>
               <CardHeader>
-                <CardTitle className="text-2xl md:text-3xl 2xl:text-3xl font-bold">
+                <CardTitle className="flex text-md md:text-3xl 2xl:text-3xl font-bold">
                   {categoryItem.name}
                 </CardTitle>
                 {/* <CardDescription className="text-xm text-gray-900 2xl:mb-2 2xl:text-lg font-semibold">
