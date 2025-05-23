@@ -56,7 +56,7 @@ export default async function Home() {
               </CardHeader>
               <CardContent>
                 <Image
-                  src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${categoryItem.slug}.png`}
+                  src={`https://lumafestasaws.s3.us-east-1.amazonaws.com/uploads/uploads/${categoryItem.slug}.png`}
                   alt={`Categoria ${categoryItem.name}`}
                   width={400}
                   height={400}

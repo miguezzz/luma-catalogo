@@ -39,7 +39,7 @@ export default function ProductCard({ product }: Props) {
         </CardHeader>
         <CardContent>
           <Image
-            src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${product.slug}.png`}
+            src={`https://lumafestasaws.s3.us-east-1.amazonaws.com/uploads/uploads/${product.slug}.png`}
             alt={`Produto ${product.name}`}
             width={400}
             height={400}

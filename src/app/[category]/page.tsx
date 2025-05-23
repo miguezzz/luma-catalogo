@@ -152,7 +152,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src={`https://lumafestas.s3.sa-east-1.amazonaws.com/uploads/${subcategory.slug}.png`}
+                    src={`https://lumafestasaws.s3.us-east-1.amazonaws.com/uploads/uploads/${subcategory.slug}.png`}
                     alt={`Subcategoria ${subcategory.name}`}
                     width={400}
                     height={400}
