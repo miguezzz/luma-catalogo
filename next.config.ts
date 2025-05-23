@@ -19,7 +19,7 @@ const nextConfig = {
       // S3 bucket
       {
         protocol: 'https',
-        hostname: 'lumafestas.s3.sa-east-1.amazonaws.com',
+        hostname: 'lumafestasaws.s3.us-east-1.amazonaws.com',
         port: '',
         pathname: '/uploads/**',
       },
