@@ -67,7 +67,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
           {/* conteúdo */}
           <h2 className="text-lg 2xl:text-2xl md:text-xl xl:text-2xl font-bold text-center mb-1">{product.name}</h2>
           <Image
-            src={`lumafestasaws.s3.us-east-1.amazonaws.com/uploads/uploads/${parentSlug}.png`}
+            src={`https://lumafestasaws.s3.us-east-1.amazonaws.com/uploads/uploads/${parentSlug}.png`}
             alt={product.name}
             width={300}
             height={300}
