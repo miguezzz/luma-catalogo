@@ -10,7 +10,7 @@ export function buildWhatsAppMessage(
   const lines = items.map((item, idx) => {
     const unitPrice = item.price / item.qty; // se você guardou total no price
     return `${idx + 1}. SKU: ${item.SKU} — ${item.name}\n` +
-           `   Qtd: ${item.qty} × R$ ${unitPrice.toFixed(2)} = R$ ${(item.price).toFixed(2)}\n`;
+           `   Qtd: ${item.qty} × R$ ${unitPrice} = R$ ${(item.price)}\n`;
   });
   const total = items.reduce((sum, i) => sum + i.price, 0);
   const footer = `\nTotal do pedido: R$ ${total.toFixed(2)}\n\nObrigado!`;
