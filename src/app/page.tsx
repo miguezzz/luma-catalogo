@@ -38,7 +38,7 @@ export default async function Home() {
       {/* header */}
       <header className="flex flex-col pt-16 items-center justify-center">
         <h1 className="flex justify-center text-6xl font-bold">Catálogo</h1>
-        <p className="flex text-sm justify-center pl-6 xl:pl-0 2xl:pl-0 md:pl-0 md:mb-2 pt-3 font-semibold md:text-2xl 2xl:text-2xl">Clique na categoria desejada para acessar a página de produtos.</p>
+        <p className="flex text-sm justify-center pl-3 xl:pl-0 2xl:pl-0 md:pl-0 md:mb-2 pt-3 font-semibold md:text-2xl 2xl:text-2xl">Clique na categoria desejada para acessar a página de produtos.</p>
       </header>
 
       {/* category cards */}
