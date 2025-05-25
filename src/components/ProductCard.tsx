@@ -30,9 +30,9 @@ export default function ProductCard({ product }: Props) {
 
   return (
     <>
-      <Card key={product.slug} className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl w-full border-none transform hover:shadow-[0_0_20px_rgba(255,255,255,1)] focus:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-140 overflow-hidden lg:w-auto">
+      <Card key={product.slug} className="flex bg-white/20 backdrop-blur-md rounded-xl shadow-xl w-full border-none transform hover:shadow-[0_0_20px_rgba(255,255,255,1)] focus:shadow-[0_0_20px_rgba(255,255,255,1)] transition-all ease-in-out duration-300 h-auto overflow-hidden lg:w-auto">
         <CardHeader>
-          <CardTitle className="text-xl font-bold lg:text-2xl">{product.name}</CardTitle>
+          <CardTitle className="text-xl min-h-[5rem] font-bold lg:text-2xl">{product.name}</CardTitle>
           {/* <CardDescription className="text-xm md:text-lg 2xl:text-lg font-medium text-gray-900 mb-2 2xl:mb-1">
             {product.description || ''}
           </CardDescription> */}
