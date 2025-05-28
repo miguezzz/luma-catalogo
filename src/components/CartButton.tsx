@@ -9,7 +9,7 @@ export default function CartButton() {
   const { openCart } = useCart();
   return (
     <Button
-      className="fixed top-4 right-4 z-50 p-2 md:p-4 2xl:p-4 bg-white rounded-full shadow hover:bg-gray-100"
+      className="fixed top-4 right-4 z-50 p-2 md:p-4 2xl:p-4 bg-white rounded-full shadow hover:bg-gray-100 focus:bg-gray-100"
       onClick={openCart}
       aria-label="Abrir carrinho"
     >
