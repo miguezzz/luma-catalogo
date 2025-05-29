@@ -94,7 +94,7 @@ export default function ProductModal({ product, isOpen, onClose, parentSlug }: P
                 checked={mode === 'atacarejo'}
                 onChange={() => setMode('atacarejo')}
               />
-              <span className="md:text-md xl:text-xl 2xl:text-3xl">Varejo</span>
+              <span className="md:text-md xl:text-xl 2xl:text-3xl">Atacarejo</span>
             </label>
             <label className="flex items-center space-x-1">
               <input
